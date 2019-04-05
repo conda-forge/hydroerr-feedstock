@@ -1,6 +1,6 @@
 {% set name = "HydroErr" %}
-{% set version = "1.22" %}
-{% set sha256 = "c2521e960c82c4a2ff5f8e48155be785d817c861b97241135cbb524b74366600" %}
+{% set version = "1.23" %}
+{% set sha256 = "c9a4aaf7f832ec343772f79fba3bbd39f85967c94b473d2596c930202ed5c924" %}
 
 package:
   name: {{ name|lower }}
