@@ -19,7 +19,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - uv_build >=0.9.14,<0.10.0
+    - uv_build
   run:
     - python >={{ python_min }}
     - numpy >=2.0,<3.0
