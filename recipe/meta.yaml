@@ -12,25 +12,27 @@ source:
 
 build:
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
+    - python >=3.10,<=3.15
+    - uv_build >=0.9.14,<0.10.0
     - pip
-    - python {{ python_min }}
-    - uv_build
   run:
-    - python >={{ python_min }}
-    - numpy >=2.0,<3.0
-    - scipy >=1.0,<2.0
+    - python >=3.10,<=3.15
+    - numpy >=2.0,<3.dev0
+    - scipy >=1.0,<2.dev0
 
 test:
-  requires:
-    - python {{ python_min }}
   imports:
     - HydroErr
     - HydroErr.HydroErr
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/BYU-Hydroinformatics/HydroErr
