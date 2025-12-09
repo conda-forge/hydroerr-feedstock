@@ -14,12 +14,13 @@ build:
   noarch: python
   number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
-  
 
 requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
+    - wheel
   run:
     - python >={{ python_min }}
     - numpy
@@ -41,7 +42,7 @@ about:
   description: Goodness of fit metrics for use in comparison studies, specifically for use in the field of hydrology
   doc_url: https://byu-hydroinformatics.github.io/HydroErr/
   dev_url: https://github.com/BYU-Hydroinformatics/HydroErr
-  
+
 extra:
   recipe-maintainers:
-    - waderoberts123
+    - pythonweb2
