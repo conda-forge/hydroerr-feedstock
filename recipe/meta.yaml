@@ -1,18 +1,18 @@
 {% set name = "HydroErr" %}
-{% set version = "1.24" %}
-{% set sha256 = "8fc3e3f38517cb6b6113ace4f99a153a34a4324ca2444cfd036c25767c6ce8f7" %}
+{% set version = "2.0.0" %}
+{% set sha256 = "2e7d1e736816dae35a213ac6474ed72b918e44c8d6d2d34f049d0ba697a8a47f" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
